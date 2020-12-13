@@ -5,7 +5,7 @@ import sys
 from flask import Flask,render_template, url_for, flash, redirect, request
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
-from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+# from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from flask_bootstrap import Bootstrap
 from wtforms import StringField, IntegerField, SubmitField, SelectField,FileField, TextAreaField
 from wtforms.validators import DataRequired
