@@ -44,9 +44,9 @@ def index():
 		name = form.name.data
 		#token = RegexpTokenizer(r'[a-zA-Z0-9]+')
 		#cv = CountVectorizer(stop_words='english',ngram_range = (1,1),tokenizer = token.tokenize)
-		filename="C:/Users/chaph/Desktop/DM/cvrc.sav"
+		filename="Model/cvrc.sav"
 		loaded_model = pickle.load(open(filename, 'rb'))
-		cv = pickle.load(open('C:/Users/chaph/Desktop/DM/cv', 'rb'))
+		cv = pickle.load(open('Model/cv', 'rb'))
 		name=cv.transform([name])
 		result = loaded_model.predict(name)
 		print(result)
