@@ -16,7 +16,7 @@ from forms import RegF,ImgF,SalF,UkeyF,USalF,UImF,DelF,IdF
 #import pandas as pd
 import os
 import pickle
-#from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 #from nltk.tokenize import RegexpTokenizer
 
 UPLOAD_FOLDER = './upload'
