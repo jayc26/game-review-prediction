@@ -13,7 +13,7 @@ from wtforms.validators import DataRequired
 import os
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
-#from nltk.tokenize import RegexpTokenizer
+from nltk.tokenize import RegexpTokenizer
 
 UPLOAD_FOLDER = './upload'
 
