@@ -16,7 +16,7 @@ from forms import RegF,ImgF,SalF,UkeyF,USalF,UImF,DelF,IdF
 #import pandas as pd
 import os
 import pickle
-from sklearn.feature_extraction.text import CountVectorizer
+#from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 
 UPLOAD_FOLDER = './upload'
@@ -29,8 +29,7 @@ app.config['SECRET_KEY'] = 'blah blah blah blah'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #db = SQLAlchemy(app)
-data = pd.read_csv("names-1.csv")
-print(data)
+
 
 class NameForm(FlaskForm):
 
@@ -61,127 +60,127 @@ def index():
 		return render_template('index.html',form=form,name=result[0], rew=rew)
 	return render_template('index.html',form=form,name=None)
 	
-@app.route('/register', methods=['GET','POST'])
-def regi():
-	reg= RegF()
-	if reg.validate_on_submit():
-		name=reg.u.data
-		flash(f'Account created for {reg.u.data}','success')
-		return redirect(url_for('index'))
-	return render_template('register.html',title="Register",form=reg)
+# @app.route('/register', methods=['GET','POST'])
+# def regi():
+# 	reg= RegF()
+# 	if reg.validate_on_submit():
+# 		name=reg.u.data
+# 		flash(f'Account created for {reg.u.data}','success')
+# 		return redirect(url_for('index'))
+# 	return render_template('register.html',title="Register",form=reg)
 
 
 
-@app.route('/id', methods=['GET','POST'])
-def im():
-	im= IdF()
-	if im.validate_on_submit():
+# @app.route('/id', methods=['GET','POST'])
+# def im():
+# 	im= IdF()
+# 	if im.validate_on_submit():
 		
     
-		name=im.u.data
-		data = pd.read_csv("names-1.csv")
-		print(data)
-		i=data[data.ID==name].Picture.values
-		j=i=data[data.ID==name].Caption.values
-		print(i)
-		if i:
+# 		name=im.u.data
+# 		data = pd.read_csv("names-1.csv")
+# 		print(data)
+# 		i=data[data.ID==name].Picture.values
+# 		j=i=data[data.ID==name].Caption.values
+# 		print(i)
+# 		if i:
 
-			return render_template('id.html',form=im,Name=name, Cap=j,Image=i[0])
-		else:
-			return render_template('id.html',form=im,Image="None")
+# 			return render_template('id.html',form=im,Name=name, Cap=j,Image=i[0])
+# 		else:
+# 			return render_template('id.html',form=im,Image="None")
 			
-	return render_template('index.html',title="Image",form=im)
-@app.route('/salary', methods=['GET','POST'])
+# 	return render_template('index.html',title="Image",form=im)
+# @app.route('/salary', methods=['GET','POST'])
 
-@app.route('/image', methods=['GET','POST'])
-def idm():
-	im= ImgF()
-	if im.validate_on_submit():
+# @app.route('/image', methods=['GET','POST'])
+# def idm():
+# 	im= ImgF()
+# 	if im.validate_on_submit():
 		
     
-		name=im.u.data
-		data = pd.read_csv("names-1.csv")
-		print(data)
-		i=data[data.Picture==name].Picture.values
-		print(i)
-		if i:
+# 		name=im.u.data
+# 		data = pd.read_csv("names-1.csv")
+# 		print(data)
+# 		i=data[data.Picture==name].Picture.values
+# 		print(i)
+# 		if i:
 
-			return render_template('image.html',form=im,Name=name,Image=i[0])
-		else:
-			return render_template('image.html',form=im,Image="None")
+# 			return render_template('image.html',form=im,Name=name,Image=i[0])
+# 		else:
+# 			return render_template('image.html',form=im,Image="None")
 			
-	return render_template('index.html',title="Image",form=im)
-@app.route('/salary', methods=['GET','POST'])
+# 	return render_template('index.html',title="Image",form=im)
+# @app.route('/salary', methods=['GET','POST'])
 
 
 
-def sal():
-	sal= SalF()
-	if sal.validate_on_submit():
-		s=sal.u.data
-		d=data[data.Salary < s].Picture.values
-		if d:
+# def sal():
+# 	sal= SalF()
+# 	if sal.validate_on_submit():
+# 		s=sal.u.data
+# 		d=data[data.Salary < s].Picture.values
+# 		if d:
 
-			return render_template('salary.html',form=sal,Image=d)
-		else:
-			return render_template('salary.html',form=sal,Image="None")
-	return render_template('index.html',title="Salary",form=sal)
+# 			return render_template('salary.html',form=sal,Image=d)
+# 		else:
+# 			return render_template('salary.html',form=sal,Image="None")
+# 	return render_template('index.html',title="Salary",form=sal)
 
-@app.route('/upkey', methods=['GET','POST'])
-def ukey():
-	uk= UkeyF()
-	if uk.validate_on_submit():
-		name=uk.u.data
-		k=uk.s.data
-		data.at[data.Name==name,"Caption"] = k
-		data.to_csv("names-1.csv",index=False)
-		dat = pd.read_csv("names-1.csv")
-		i=dat[dat.Name==name].Picture.values
-		j=dat[dat.Name==name].Caption.values
-		print(i,j)
+# @app.route('/upkey', methods=['GET','POST'])
+# def ukey():
+# 	uk= UkeyF()
+# 	if uk.validate_on_submit():
+# 		name=uk.u.data
+# 		k=uk.s.data
+# 		data.at[data.Name==name,"Caption"] = k
+# 		data.to_csv("names-1.csv",index=False)
+# 		dat = pd.read_csv("names-1.csv")
+# 		i=dat[dat.Name==name].Picture.values
+# 		j=dat[dat.Name==name].Caption.values
+# 		print(i,j)
 
-		return render_template('upkey.html',form=uk,Name=name,Image=i, cap=j)
-	return render_template('upkey.html',title="Salary",form=uk)
+# 		return render_template('upkey.html',form=uk,Name=name,Image=i, cap=j)
+# 	return render_template('upkey.html',title="Salary",form=uk)
 
-@app.route('/upsal', methods=['GET','POST'])
-def usal():
-	us= USalF()
-	if us.validate_on_submit():
-		name=us.u.data
-		k=us.s.data
-		data.at[data.Name==name,"Salary"] = k
-		data.to_csv("people.csv",index=False)
+# @app.route('/upsal', methods=['GET','POST'])
+# def usal():
+# 	us= USalF()
+# 	if us.validate_on_submit():
+# 		name=us.u.data
+# 		k=us.s.data
+# 		data.at[data.Name==name,"Salary"] = k
+# 		data.to_csv("people.csv",index=False)
 		
-		return render_template('upsal.html',form=us,Name=name,Kw=k)
-	return render_template('upsal.html',title="Salary",form=us)
+# 		return render_template('upsal.html',form=us,Name=name,Kw=k)
+# 	return render_template('upsal.html',title="Salary",form=us)
 
-@app.route('/del', methods=['GET','POST'])
-def delr():
-	us= DelF()
-	if us.validate_on_submit():
-		name=us.u.data
-		print(name)
-		#data.drop([data.Name==name])
-		b=data[data.Name != name]
-		print(data)
-		print(b)
-		data1=b
-		#data.at[data.Name==name,"Salary"] = k
-		data1.to_csv("people.csv",index=False)
-		return render_template('del.html',form=us,Name=name)
-	return render_template('del.html',title="Salary",form=us)
+# @app.route('/del', methods=['GET','POST'])
+# def delr():
+# 	us= DelF()
+# 	if us.validate_on_submit():
+# 		name=us.u.data
+# 		print(name)
+# 		#data.drop([data.Name==name])
+# 		b=data[data.Name != name]
+# 		print(data)
+# 		print(b)
+# 		data1=b
+# 		#data.at[data.Name==name,"Salary"] = k
+# 		data1.to_csv("people.csv",index=False)
+# 		return render_template('del.html',form=us,Name=name)
+# 	return render_template('del.html',title="Salary",form=us)
 
-@app.route('/upload', methods=['GET','POST'])
-def uim():
-	us= UImF()
-	if us.validate_on_submit():
-		name= us.u.data
+# @app.route('/upload', methods=['GET','POST'])
+# def uim():
+# 	us= UImF()
+# 	if us.validate_on_submit():
+# 		name= us.u.data
 		
 
 
 		
-		return render_template('upsal.html',form=us,Name=name)
-	return render_template('upsal.html',title="Salary",form=us)
+# 		return render_template('upsal.html',form=us,Name=name)
+# 	return render_template('upsal.html',title="Salary",form=us)
 
 
 @app.route('/help')
