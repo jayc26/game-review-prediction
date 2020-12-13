@@ -9,7 +9,7 @@ from flask_wtf.file import FileField, FileRequired, FileAllowed
 from flask_bootstrap import Bootstrap
 from wtforms import StringField, IntegerField, SubmitField, SelectField,FileField, TextAreaField
 from wtforms.validators import DataRequired
-from forms import RegF,ImgF,SalF,UkeyF,USalF,UImF,DelF,IdF
+#from forms import RegF,ImgF,SalF,UkeyF,USalF,UImF,DelF,IdF
 import os
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
