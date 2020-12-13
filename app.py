@@ -42,7 +42,7 @@ def index():
 	form = NameForm()
 	if form.validate_on_submit():
 		name = form.name.data
-		token = RegexpTokenizer(r'[a-zA-Z0-9]+')
+		#token = RegexpTokenizer(r'[a-zA-Z0-9]+')
 		#cv = CountVectorizer(stop_words='english',ngram_range = (1,1),tokenizer = token.tokenize)
 		filename="C:/Users/chaph/Desktop/DM/cvrc.sav"
 		loaded_model = pickle.load(open(filename, 'rb'))
