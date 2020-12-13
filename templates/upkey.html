@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+{% if Kw != "None" %}
+<p>Name: {{Name}}
+    Updated Caption: {{cap}}
+</p>
+<p>{{Image}}</p>
+<img src="/static/Images/{{Image}}" width="200" height="200">
+
+{% else %}
+<p>No records found!</p>
+{% endif %}
+
+{{ wtf.quick_form(form) }}
+{% endblock %}

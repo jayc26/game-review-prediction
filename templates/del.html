@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+{% if Kw != "None" %}
+<p>Name: {{Name}}
+    Deleted
+</p>
+
+{% else %}
+<p>No records found!</p>
+{% endif %}
+
+{{ wtf.quick_form(form) }}
+{% endblock %}

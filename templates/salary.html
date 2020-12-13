@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% if Image != "None" %}
+{% for Image in Image %}
+<img src="/static/Images/{{Image}}" width="200" height="200">
+{% endfor %}
+{% else %}
+<p>No records found!</p>
+{% endif %}
+
+{{ wtf.quick_form(form) }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+
+<h2 style="text-align: center;"> Enter Review</h2>
+{{ wtf.quick_form(form) }}
+{% if name %}
+<h3>Predicted Rating: <b>{{ name }}</b></h3>
+<h3>{{rew}}!</h3>
+{% endif %}
+{% endblock %}
