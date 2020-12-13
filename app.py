@@ -9,6 +9,7 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 from flask_bootstrap import Bootstrap
 from wtforms import StringField, IntegerField, SubmitField, SelectField,FileField, TextAreaField
 from wtforms.validators import DataRequired
+import sklearn
 #from werkzeug.utils import secure_filename
 #from flask_sqlalchemy import SQLAlchemy
 from forms import RegF,ImgF,SalF,UkeyF,USalF,UImF,DelF,IdF
