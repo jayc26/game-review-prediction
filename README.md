@@ -6,7 +6,7 @@ For Web demo : [click here](https://gameratingprediction.herokuapp.com/)
 
 For Video demo : [click here](https://youtu.be/xwQKD65ZX9g)
 
-For Blog : [click here]()
+For Blog : [click here](http://jaychaphekar.uta.cloud/uncategorized/jay-chaphekar/)
 
 For Kaggle : [click here](https://www.kaggle.com/jaychaphekar/notebook3ead5e8a8c)
 
