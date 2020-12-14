@@ -2,6 +2,25 @@
 ## Name: Jay Nitin Chaphekar
 ## UTA ID: 1001763932
 
+For Web demo : [click here]()
+
+For Video demo : [click here]()
+
+For Blog : [click here]()
+
+For Kaggle : [click here]()
+
+***
+For using locally :<br>
+1. Install all dependencies mentioned in **requirement.txt**
+
+2. To run the Flask app run app.py
+>python app.py
+3. Type localhost:3000 in your browser to open the app in browser
+
+***
+
+
 ## Introduction
 This project is based on the NLP (Natural Language Processing) domain which includes the analysing text data and predicting sentiments based on the user reviews. This includes analyzing the data removing stopwords, creating vocabulary of meaningful words, finding the best classfier with suitable hyperarameters and based on that predicting the rating of the review 
 
