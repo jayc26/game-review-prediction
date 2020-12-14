@@ -2,13 +2,13 @@
 ## Name: Jay Nitin Chaphekar
 ## UTA ID: 1001763932
 
-For Web demo : [click here]()
+For Web demo : [click here](https://gameratingprediction.herokuapp.com/)
 
-For Video demo : [click here]()
+For Video demo : [click here](https://youtu.be/xwQKD65ZX9g)
 
 For Blog : [click here]()
 
-For Kaggle : [click here]()
+For Kaggle : [click here](https://www.kaggle.com/jaychaphekar/notebook3ead5e8a8c)
 
 ***
 For using locally :<br>
